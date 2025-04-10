@@ -25,9 +25,11 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
 
   // increment quantity 
   void incrementQuantity() {
+  setState(() {
     setState(() {
     quantityCount ++;
     });
+  });
   }
 
   @override
@@ -120,15 +122,35 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   children: [
                     //minus button
                     Container(
+                      decoration: BoxDecoration(color: secondaryColor,
+                      shape: BoxShape.circle,
+                      ),
                       child: IconButton(
-                         icon: Icon(Icons.remove),
+                         icon: const Icon(Icons.remove, color: Colors.white,
+                         ),
                          onPressed: decrementQuantity,
                     ),
-                    )
+                    ),
 
                     // quantity count 
+                    Text(
+                      quantityCount.toString(),
+                      style: TextStyle(color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                    ),
 
                     //plus button
+                    Container(
+                      decoration: BoxDecoration(color: secondaryColor,
+                      shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                         icon: const Icon(Icons.add, color: Colors.white,
+                         ),
+                         onPressed: incrementQuantity,
+                    ),
+                    ),
                   ],
                 ),
 
