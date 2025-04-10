@@ -13,8 +13,23 @@ final Food food;
 }
 
 class _FoodDetailsPageState extends State<FoodDetailsPage> {
+  // quantity
+  int quantityCount = 0;
 
-  
+  //decrement
+  void decrementQuantity() {
+    setState(() {
+    quantityCount --;
+    });
+  }
+
+  // increment quantity 
+  void incrementQuantity() {
+    setState(() {
+    quantityCount ++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
