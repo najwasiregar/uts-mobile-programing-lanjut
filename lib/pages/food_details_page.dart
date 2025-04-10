@@ -14,7 +14,34 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.grey[900],
+      ),
+      body: Column(
+        children: [
+          // listview of food details
+          Expanded(
+            child: ListView(
+              children: [
+                // image 
+                
 
+                // rating
+
+                // food name
+
+                // description
+
+              ],
+            ),
+          ),
+
+          // price + quantity + add to cart button
+
+        ],
+      ),
     );
   }
 }
