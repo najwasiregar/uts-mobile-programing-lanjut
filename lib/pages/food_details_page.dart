@@ -4,7 +4,7 @@ import 'package:sushishop/theme/colors.dart';
 import '../models/food.dart';
 
 class FoodDetailsPage extends StatefulWidget {
-final Food food;
+  final Food food;
 
   const FoodDetailsPage({super.key, required this.food});
 
@@ -19,17 +19,15 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
   //decrement
   void decrementQuantity() {
     setState(() {
-    quantityCount --;
+      quantityCount --;
     });
   }
 
   // increment quantity 
   void incrementQuantity() {
-  setState(() {
     setState(() {
-    quantityCount ++;
+      quantityCount ++;
     });
-  });
   }
 
   @override
@@ -50,7 +48,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                 children: [
                   // image 
                   Image.asset(widget.food.imagePath,
-                  height: 200,
+                    height: 200,
                   ),
               
                   const SizedBox(height: 25,
@@ -63,7 +61,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                       Icon(Icons.star, color: Colors.yellow[800],
                       ),
               
-                     const SizedBox(height: 5),
+                      const SizedBox(height: 5),
               
                       // rating number
                       Text(
@@ -85,19 +83,19 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   ),
               
                   // description
-                Text("Description", style: TextStyle(color: Colors.grey[900], fontWeight: FontWeight.bold,
-                fontSize: 18,
-                ),
-                ),
+                  Text("Description", style: TextStyle(color: Colors.grey[900], fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                  ),
 
-                const SizedBox(height: 10),
+                  const SizedBox(height: 10),
 
-                Text("Delicate sliced, fresh salmon drapes elegantly over a pillow of perfectly seasoned sushi rice.",
-                style: TextStyle(color: Colors.grey[600],
-                fontSize: 14,
-                height: 2,
-                ),
-                ),
+                  Text("Delicate sliced, fresh salmon drapes elegantly over a pillow of perfectly seasoned sushi rice.",
+                    style: TextStyle(color: Colors.grey[600],
+                      fontSize: 14,
+                      height: 2,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -109,54 +107,63 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
             child: Column(
               children: [
                 // price + quantity
-                Text("\$" + widget.food.price,
-                style: TextStyle(
-                  color: Colors.white, 
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  ),
-                ),
-
-                // quantity
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    //minus button
-                    Container(
-                      decoration: BoxDecoration(color: secondaryColor,
-                      shape: BoxShape.circle,
+                    Text("\$${widget.food.price}",
+                      style: const TextStyle(
+                        color: Colors.white, 
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
-                      child: IconButton(
-                         icon: const Icon(Icons.remove, color: Colors.white,
-                         ),
-                         onPressed: decrementQuantity,
-                    ),
                     ),
 
-                    // quantity count 
-                    Text(
-                      quantityCount.toString(),
-                      style: TextStyle(color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                    ),
+                    // quantity
+                    Row(
+                      children: [
+                        //minus button
+                        Container(
+                          decoration: BoxDecoration(color: secondaryColor,
+                            shape: BoxShape.circle,
+                          ),
+                          child: IconButton(
+                            icon: const Icon(Icons.remove, color: Colors.white,
+                            ),
+                            onPressed: decrementQuantity,
+                          ),
+                        ),
 
-                    //plus button
-                    Container(
-                      decoration: BoxDecoration(color: secondaryColor,
-                      shape: BoxShape.circle,
-                      ),
-                      child: IconButton(
-                         icon: const Icon(Icons.add, color: Colors.white,
-                         ),
-                         onPressed: incrementQuantity,
-                    ),
+                        // quantity count 
+                        SizedBox(
+                          width: 40,
+                          child: Center(
+                            child: Text(
+                              quantityCount.toString(),
+                              style: const TextStyle(color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                            ),
+                          ),
+                        ),
+
+                        //plus button
+                        Container(
+                          decoration: BoxDecoration(color: secondaryColor,
+                            shape: BoxShape.circle,
+                          ),
+                          child: IconButton(
+                            icon: const Icon(Icons.add, color: Colors.white,
+                            ),
+                            onPressed: incrementQuantity,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
 
                 // add to cart button
 
-              
               ],
             ),
           )
