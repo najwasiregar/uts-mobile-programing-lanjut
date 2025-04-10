@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sushishop/theme/colors.dart';
 import '../models/food.dart';
 
 class FoodDetailsPage extends StatefulWidget {
@@ -84,7 +85,24 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
           ),
 
           // price + quantity + add to cart button
+          Container(
+            color: primarycolor,
+            child: Column(
+              children: [
+                // price + quantity
+                Text("\$" + widget.food.price,
+                style: TextStyle(
+                  color: Colors.white, 
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  ),
+                ),
+                // add to cart button
 
+              
+              ],
+            ),
+          )
         ],
       ),
     );
