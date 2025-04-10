@@ -13,6 +13,8 @@ final Food food;
 }
 
 class _FoodDetailsPageState extends State<FoodDetailsPage> {
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,6 +99,24 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   fontSize: 18,
                   ),
                 ),
+
+                // quantity
+                Row(
+                  children: [
+                    //minus button
+                    Container(
+                      child: IconButton(
+                         icon: Icon(Icons.remove),
+                         onPressed: decrementQuantity,
+                    ),
+                    )
+
+                    // quantity count 
+
+                    //plus button
+                  ],
+                ),
+
                 // add to cart button
 
               
